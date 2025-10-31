@@ -1,0 +1,8 @@
+duckdb==1.4.1
+pandas==2.3.3
+playwright==1.55.0
+python-dotenv==1.2.1
+requests==2.32.5
+beautifulsoup4==4.12.3
+selenium==4.25.0
+pyarrow==17.0.0
