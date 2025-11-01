@@ -50,8 +50,6 @@ Construir um pipeline completo de **coleta, transformação e carga (ETL)** que 
 | FRED      | `DEXUSUK`      | Taxa USD/GBP (invertida para GBP/USD)       | 6+ meses |
 | CoinGecko | `BTC/USD`      | Cotação diária do Bitcoin                   | 6+ meses |
 
-Os dados foram padronizados em base diária contínua, com cálculo de retornos em janelas de 1, 3 e 5 dias (`r1`, `r3`, `r5`).
-
 ---
 
 ## 🗄️ Modelagem de Dados no DuckDB
@@ -60,7 +58,7 @@ Os dados foram padronizados em base diária contínua, com cálculo de retornos 
 
 | Tabela          | Descrição                       | Principais Campos                          |
 | --------------- | ------------------------------- | ------------------------------------------ |
-| **prices**      | Séries históricas dos ativos    | `instr`, `date`, `close`, `r1`, `r3`, `r5` |
+| **prices**      | Séries históricas dos ativos    | `instr`, `date`, `close` |
 | **news_bbc**    | Notícias coletadas via scraping | `title`, `url`, `summary`, `collected_at`, `published_at`, `published_text`  |
 | **instruments** | Metadados dos instrumentos      | `instr_id`, `symbol`, `name`, `class`      |
 
