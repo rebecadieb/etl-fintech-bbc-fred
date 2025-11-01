@@ -34,11 +34,11 @@ Construir um pipeline completo de **coleta, transformação e carga (ETL)** que 
 ### 🔹 Notícias (Web Scraping – BBC News)
 
 * Fonte: [BBC News – US-Canada](https://www.bbc.com/news/us-canada)
-* Coletadas **100 notícias** contendo título, resumo, link e data de coleta.
+* Coletadas **100 notícias** contendo título, resumo, link e data de coleta, no período de 01/08 até 01/11.
 * Campos armazenados:
 
   ```
-  ['title', 'url', 'summary', 'collected_at']
+  [`title`, `url`, `summary`, `collected_at`, `published_at`, `published_text`]
   ```
 * Objetivo: capturar contexto geopolítico e eventos com impacto em mercados.
 
@@ -61,7 +61,7 @@ Os dados foram padronizados em base diária contínua, com cálculo de retornos 
 | Tabela          | Descrição                       | Principais Campos                          |
 | --------------- | ------------------------------- | ------------------------------------------ |
 | **prices**      | Séries históricas dos ativos    | `instr`, `date`, `close`, `r1`, `r3`, `r5` |
-| **news_bbc**    | Notícias coletadas via scraping | `title`, `url`, `summary`, `collected_at`  |
+| **news_bbc**    | Notícias coletadas via scraping | `title`, `url`, `summary`, `collected_at`, `published_at`, `published_text`  |
 | **instruments** | Metadados dos instrumentos      | `instr_id`, `symbol`, `name`, `class`      |
 
 ```sql
@@ -89,8 +89,8 @@ DESCRIBE instruments;
 │
 ├── market.duckdb                 # Banco analítico local
 ├── prices.parquet                # Dados de preços
-├── bbc_israel_gaza_war.csv       # Notícias coletadas
-├── etl_pipeline.ipynb            # Notebook principal
+├── bbc_us_canada_latest_updates.csv       # Notícias coletadas
+├── projeto_final_web_scraping.ipynb            # Notebook principal
 └── requirements.txt              # Dependências fixas
 ```
 
